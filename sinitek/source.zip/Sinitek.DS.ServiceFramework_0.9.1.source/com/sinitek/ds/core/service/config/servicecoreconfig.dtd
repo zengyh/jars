@@ -1,0 +1,91 @@
+<!ELEMENT serviceConfig (include*,(service?)+)>
+
+<!ELEMENT include EMPTY>
+<!ATTLIST include path CDATA #REQUIRED>
+
+<!ELEMENT service (
+className, initparam?,serviceParam
+)>
+<!ATTLIST service functionCode CDATA #REQUIRED>
+<!ATTLIST service functionName CDATA #IMPLIED>
+<!--add chenqi32-->
+<!ELEMENT initparam (param*)>
+<!ELEMENT param EMPTY>
+<!ATTLIST param name CDATA #REQUIRED
+                value CDATA #REQUIRED
+>
+<!ELEMENT className (#PCDATA)>
+<!ELEMENT serviceParam (
+ string*,integer*,float*,double*,boolean*,date*,time*,datetime*,enum*,dict*
+ )>
+
+<!ELEMENT string EMPTY>
+<!ATTLIST string name CDATA #REQUIRED>
+<!ATTLIST string minLength CDATA #IMPLIED>
+<!ATTLIST string maxLength CDATA #IMPLIED>
+<!ATTLIST string info CDATA #IMPLIED>
+<!ATTLIST string comment CDATA #IMPLIED>
+<!ATTLIST string isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT integer EMPTY>
+<!ATTLIST integer name CDATA #REQUIRED>
+<!ATTLIST integer maxValue CDATA #IMPLIED>
+<!ATTLIST integer minValue CDATA #IMPLIED>
+<!ATTLIST integer info CDATA #IMPLIED>
+<!ATTLIST integer comment CDATA #IMPLIED>
+<!ATTLIST integer isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT float EMPTY>
+<!ATTLIST float name CDATA #REQUIRED>
+<!ATTLIST float maxValue CDATA #IMPLIED>
+<!ATTLIST float minValue CDATA #IMPLIED>
+<!ATTLIST float info CDATA #IMPLIED>
+<!ATTLIST float comment CDATA #IMPLIED>
+<!ATTLIST float isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT double EMPTY>
+<!ATTLIST double name CDATA #REQUIRED>
+<!ATTLIST double maxValue CDATA #IMPLIED>
+<!ATTLIST double minValue CDATA #IMPLIED>
+<!ATTLIST double info CDATA #IMPLIED>
+<!ATTLIST double comment CDATA #IMPLIED>
+<!ATTLIST double isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT boolean EMPTY>
+<!ATTLIST boolean name CDATA #REQUIRED>
+<!ATTLIST boolean info CDATA #IMPLIED>
+<!ATTLIST boolean comment CDATA #IMPLIED>
+<!ATTLIST boolean isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT date EMPTY>
+<!ATTLIST date name CDATA #REQUIRED>
+<!ATTLIST date info CDATA #IMPLIED>
+<!ATTLIST date comment CDATA #IMPLIED>
+<!ATTLIST date isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT time EMPTY>
+<!ATTLIST time name CDATA #REQUIRED>
+<!ATTLIST time info CDATA #IMPLIED>
+<!ATTLIST time comment CDATA #IMPLIED>
+<!ATTLIST time isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT datetime EMPTY>
+<!ATTLIST datetime name CDATA #REQUIRED>
+<!ATTLIST datetime info CDATA #IMPLIED>
+<!ATTLIST datetime comment CDATA #IMPLIED>
+<!ATTLIST datetime isNotNull ( true|false ) #IMPLIED>
+
+<!ELEMENT dict EMPTY>
+<!ATTLIST dict name CDATA #REQUIRED>
+<!ATTLIST dict isNotNull ( true|false ) #IMPLIED>
+<!ATTLIST dict info CDATA #IMPLIED>
+<!ATTLIST dict comment CDATA #IMPLIED>
+<!ATTLIST dict key CDATA #REQUIRED>
+
+<!ELEMENT enum EMPTY>
+<!ATTLIST enum name CDATA #REQUIRED>
+<!ATTLIST enum isNotNull ( true|false ) #IMPLIED>
+<!ATTLIST enum valueType ( integer|char ) #IMPLIED>
+<!ATTLIST enum info CDATA #IMPLIED>
+<!ATTLIST enum comment CDATA #IMPLIED>
+<!ATTLIST enum enumName CDATA #REQUIRED>

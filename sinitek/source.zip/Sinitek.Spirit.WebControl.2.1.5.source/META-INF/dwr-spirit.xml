@@ -1,0 +1,71 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN"
+    "http://directwebremoting.org/schema/dwr30.dtd">
+<dwr>
+    <!--修改该文件必须重启应用服务器-->
+    <allow>
+        <!--Interact交互控件-->
+        <create creator="new" javascript="SpiritInteractAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.interact.SpiritInteractAction"/>
+        </create>
+
+        <!--Form控件-->
+        <create creator="new" javascript="SpiritFormAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.form.SpiritFormAction"/>
+        </create>
+
+        <!--表格控件-->
+        <create creator="new" javascript="SpiritTableAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.table.SpiritTableAction"/>
+        </create>
+
+        <!--树控件-->
+        <create creator="new" javascript="SpiritTreeAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.tree.SpiritTreeAction"/>
+        </create>
+
+        <!--autocomplete-->
+        <create creator="new" javascript="SpiritAutoCompleteAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.autocomplete.SpiritAutoCompleteAction"/>
+        </create>
+
+        <!--selector-->
+        <create creator="new" javascript="SpiritSelectorAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.selector.SpiritSelectorAction"/>
+        </create>
+
+        <!--chart-->
+        <create creator="new" javascript="SpiritChartAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.chart.SpiritChartAction"/>
+        </create>
+
+        <!--common-->
+        <create creator="new" javascript="SpiritCommonAction">
+            <param name="class" value="com.sinitek.spirit.webcontrol.common.CommonAction"/>
+        </create>
+
+        <!--说明，如果dwr返回的对象或者list是一个bean，请在这里设置，重启服务器-->
+        <!--start 对象转换器-->
+        <convert converter="exception" match="java.lang.Exception"/>
+        <convert converter="bean" match="java.lang.StackTraceElement"/>
+        <convert converter="bean" match="com.sinitek.spirit.webcontrol.demo.*"/>
+        <convert converter="bean" match="com.sinitek.base.metadb.config.impl.*"/>
+        <convert converter="bean" match="com.sinitek.base.metadb.*"/>
+        <convert converter="bean" match="com.sinitek.spirit.webcontrol.tree.*"/>
+        <convert converter="bean" match="com.sinitek.spirit.webcontrol.autocomplete.*"/>
+        <convert converter="bean" match="com.sinitek.spirit.webcontrol.selector.*"/>
+        <convert converter="bean" match="com.sinitek.base.enumsupport.*"/>
+        <!--end 对象转换器-->
+    </allow>
+
+    <!--签名说明，dwr方法里的参数，是集合而且集合里的对象不是基本类型，必须要在此说明，请在这里设置，重启服务器-->
+    <signatures>
+      <![CDATA[
+      import java.util.Map;
+      import java.util.List;
+      import org.directwebremoting.io.FileTransfer;
+      import com.sinitek.spirit.webcontrol.form.SpiritFormAction;
+      SpiritFormAction.callFileSubmit(String, String, Map, String[],FileTransfer[],HttpServletRequest);
+      ]]>
+    </signatures>
+</dwr>

@@ -1,0 +1,30 @@
+<!ELEMENT client (services, dispatch)>
+
+<!ELEMENT services (local?,ejb*,webservice*,socket*)>
+<!ELEMENT local EMPTY>
+<!ATTLIST local name ID #REQUIRED>
+
+<!ELEMENT ejb (jndiProp+)>
+<!ATTLIST ejb name ID #REQUIRED>
+<!ATTLIST ejb url CDATA #REQUIRED>
+<!ATTLIST ejb jndi CDATA #REQUIRED>
+<!ATTLIST ejb testTime CDATA #IMPLIED>
+<!ATTLIST ejb testFlag (true|false) #IMPLIED>
+
+<!ELEMENT webservice EMPTY>
+<!ATTLIST webservice name ID #REQUIRED>
+<!ATTLIST webservice url CDATA #REQUIRED>
+
+<!ELEMENT socket EMPTY>
+<!ATTLIST socket name ID #REQUIRED>
+<!ATTLIST socket ip CDATA #REQUIRED>
+<!ATTLIST socket port CDATA #REQUIRED>
+
+<!ELEMENT jndiProp (#PCDATA)>
+<!ATTLIST jndiProp name CDATA #REQUIRED>
+
+
+<!ELEMENT dispatch (call+)>
+<!ELEMENT call EMPTY>
+<!ATTLIST call functionCode CDATA #REQUIRED>
+<!ATTLIST call service IDREF #REQUIRED>
