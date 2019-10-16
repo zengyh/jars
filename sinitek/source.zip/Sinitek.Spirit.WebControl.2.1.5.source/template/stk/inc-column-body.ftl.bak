@@ -1,1 +1,0 @@
-<div name='textWrap' style="white-space:nowrap;overflow:hidden;display:inline-block;*display:inline;*zoom:1; "><#if parameters.title?if_exists != "">${parameters.title}<#else >&nbsp<#rt/></#if><#if parameters.helpContent?if_exists != ""><b class="icon-help" helpContent="${parameters.helpContent}"></b></#if></div><div style='display:none;' type='express'>

@@ -1,1 +1,0 @@
-<#include "textfield-close.ftl" />

@@ -1,1 +1,0 @@
-<div class="stk_vspacing" style="height:${parameters.height?html}"></div>

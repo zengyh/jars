@@ -1,1 +1,0 @@
-<#include "inc-column-close.ftl" />
